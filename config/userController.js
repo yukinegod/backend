@@ -20,6 +20,20 @@ const userController = {
         })
 
         await newUser.save()
+
+        return res.status(200).json({
+          user: {
+            userId: newUser.userId,
+            username: newUser.username,
+            balance: newUser.balance,
+            experience: newUser.experience,
+            userLvl: newUser.userLvl,
+            userTheme: newUser.userTheme,
+            coinsPerClick: newUser.coinsPerClick,
+            multiplyClicksLvl: newUser.multiplyClicksLvl,
+            multiplyExperienceLvl: newUser.multiplyExperienceLvl
+          }
+        })
       }
 
       return res.status(200).json({
